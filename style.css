@@ -1,0 +1,778 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    /* Ensure it stays at the top */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    /* Slightly reduced padding */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    /* Align items vertically */
+}
+
+.nav-links li {
+    margin-left: 25px;
+    /* Adjusted spacing */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 0;
+    /* Add padding for better click area */
+    position: relative;
+    /* For potential underlines */
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #e67e22;
+}
+
+/* Cart Icon Styles */
+.cart-icon-container {
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+    /* Space from other nav items */
+}
+
+.cart-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #333;
+    transition: fill 0.3s;
+}
+
+.cart-icon:hover svg {
+    fill: #e67e22;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #e67e22;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 18px;
+    /* Ensure circle shape */
+    text-align: center;
+    line-height: 14px;
+    display: none;
+    /* Hide initially */
+}
+
+#cart-count.visible {
+    display: block;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/* Hero Section Styles */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://t4.ftcdn.net/jpg/02/92/20/37/360_F_292203735_CSsyqyS6A4Z9Czd4Msf7qZEhoxjpzZl1.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding-top: 70px;
+    /* Adjusted for fixed header */
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e67e22;
+    color: #fff !important;
+    /* Ensure text is white */
+    padding: 10px 20px;
+    /* Slightly smaller button */
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    border: none;
+    /* Ensure button style */
+    cursor: pointer;
+    /* Indicate clickable */
+    font-size: 15px;
+    /* Consistent font size */
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #d35400;
+    color: #fff !important;
+}
+
+/* About Section Styles */
+.about {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #333;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #e67e22;
+    margin: 10px auto;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 50%;
+    /* Prevent image becoming too large */
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Menu Section Styles */
+.menu {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    /* Ensure it takes full height */
+    padding-top: 100px;
+    /* Add padding for fixed header */
+}
+
+.menu-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.menu-tab {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.menu-tab.active {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    /* Use flex for better layout */
+    flex-direction: column;
+    /* Stack elements vertically */
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.menu-item-content {
+    padding: 20px;
+    flex-grow: 1;
+    /* Allow content to take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Push button to bottom */
+}
+
+.menu-item-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.menu-item-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.menu-item-price {
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.menu-item-desc {
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    /* Allow description to take space */
+}
+
+.menu-item .btn {
+    /* Style button specifically */
+    margin-top: auto;
+    /* Push button to the bottom */
+    width: 100%;
+    /* Make button full width */
+}
+
+/* Offers Section Styles */
+.offers {
+    padding: 80px 0;
+    background-color: #fff;
+    min-height: 100vh;
+    padding-top: 100px;
+    /* Add padding for fixed header */
+}
+
+.offers-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.offer-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.offer-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.offer-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.offer-desc {
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.offer-expiry {
+    color: #e67e22;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.offer-card .btn {
+    margin-top: auto;
+    width: 100%;
+}
+
+.discount-tag {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: #e67e22;
+    color: #fff;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 16px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    /* Adjusted min-width */
+    margin-bottom: 30px;
+    padding: 0 15px;
+    /* Add padding between sections */
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    color: #e67e22;
+    /* Match accent color */
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #e67e22;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.contact-info p,
+.footer-section p {
+    margin-bottom: 10px;
+    /* Spacing for text */
+    color: #ccc;
+    /* Lighter text */
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #ccc;
+    /* Lighter color */
+    font-size: 20px;
+    /* Slightly larger icons */
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #e67e22;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ccc;
+}
+
+/* Modal Styles (for Sign In and Cart) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    /* Above header */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Dim background */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+    /* Show when active */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    /* Limit width */
+    width: 90%;
+    /* Responsive width */
+    position: relative;
+    animation: fadeInModal 0.3s ease-out;
+}
+
+.modal-close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.modal-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Sign In Form Styles */
+#signin-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+#signin-form input[type="email"],
+#signin-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#signin-form .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.form-links {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.form-links a {
+    color: #e67e22;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+
+/* Cart Modal Styles */
+#cart-items-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    max-height: 300px;
+    /* Limit height and allow scroll */
+    overflow-y: auto;
+}
+
+#cart-items-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#cart-items-list li:last-child {
+    border-bottom: none;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+    margin-right: 15px;
+}
+
+.cart-item-name {
+    font-weight: 500;
+}
+
+.cart-item-price {
+    color: #666;
+    font-size: 14px;
+}
+
+.cart-item-quantity {
+    font-weight: bold;
+    min-width: 30px;
+    /* Align quantities */
+    text-align: right;
+}
+
+#cart-total {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+#cart-modal .btn {
+    /* Checkout button */
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 65px;
+        /* Adjust based on header height */
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        transition: left 0.5s;
+        z-index: 1500;
+        /* Ensure menu is above content */
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .cart-icon-container {
+        margin-left: 0;
+        /* Remove margin for mobile */
+        order: -1;
+        /* Move cart icon before burger */
+        margin-right: 15px;
+    }
+
+    .nav-links li:last-child {
+        /* Adjust Sign In link position */
+        margin-top: 30px;
+    }
+
+    .mobile-menu {
+        display: block;
+        z-index: 1600;
+        /* Above nav links */
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+        order: 2;
+        /* Text below image */
+    }
+
+    .about-image {
+        max-width: 100%;
+        /* Full width on mobile */
+        order: 1;
+        /* Image above text */
+    }
+
+    .menu-tabs {
+        flex-wrap: wrap;
+    }
+
+    .menu-tab {
+        margin-bottom: 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        /* Center sections on mobile */
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        /* Full width */
+        padding: 0;
+        /* Remove horizontal padding */
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+        /* Center underline */
+    }
+
+    .social-links {
+        text-align: center;
+        /* Center social links */
+    }
+
+    .modal-content {
+        width: 95%;
+        /* More width on small screens */
+        padding: 20px;
+    }
+}
+
+/* Page Transitions & Animations */
+.page {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    padding-top: 70px;
+    /* Add padding to all pages for fixed header */
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
